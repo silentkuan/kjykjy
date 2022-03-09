@@ -11,9 +11,9 @@ $query_builder = TRUE;
 $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
 // Check connection
 if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-  }
-  echo '<script>alert("Connect Sucessfully")</script>';
+  die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
 
 ?>
 
