@@ -9,6 +9,12 @@ $active_group = 'default';
 $query_builder = TRUE;
 // Connect to DB
 $conn = mysqli_connect($cleardb_server, $cleardb_username, $cleardb_password, $cleardb_db);
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+  }
+  echo "Connected successfully";
+
 ?>
 
 <!DOCTYPE html>
