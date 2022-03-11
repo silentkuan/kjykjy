@@ -70,10 +70,10 @@
 
         <div class="contact-col">
             <form onsubmit="sendEmail(); reset(); return false;" >
-                <input name="name" type="text" placeholder="Enter your name" required>
-                <input name="email" type="email" placeholder="Enter email address" required>
-                <input name="subject" type="text" placeholder="Enter your subject" required>
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message" required></textarea>
+                <input id="name" name="name" type="text" placeholder="Enter your name" required>
+                <input id="email" name="email" type="email" placeholder="Enter email address" required>
+                <input id="subject" name="subject" type="text" placeholder="Enter your subject" required>
+                <textarea id="message" name="message" id="message" cols="30" rows="10" placeholder="Enter your message" required></textarea>
                 <button type="submit" class="hero-btn red-btn" placeholder="Enter your message" required>Send Message</button>
             </form>
         </div>
@@ -103,13 +103,14 @@
 
  <!-- Footer END-->
 
- <script src="https://smtpjs.com/v3/smtp.js"></script>
+
  
 </body>
 </html>
 
 
 <!-- js -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>
     var navLinks=document.getElementById("nav-links");
     function showMenu(){
