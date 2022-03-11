@@ -69,7 +69,7 @@
         </div>
 
         <div class="contact-col">
-            <form action="form-handler.php" method="post">
+            <form onsubmit="sendEmail(); reset(); return false;" >
                 <input name="name" type="text" placeholder="Enter your name" required>
                 <input name="email" type="email" placeholder="Enter email address" required>
                 <input name="subject" type="text" placeholder="Enter your subject" required>
@@ -78,6 +78,8 @@
             </form>
         </div>
     </div>
+
+    
 </section>
  
      <!-- Footer START-->
@@ -98,7 +100,11 @@
         <p>Made with <i class="fa-regular fa-heart"></i> by Kuan Jiun Ying</p>
         </section>
 
+
  <!-- Footer END-->
+
+ <script src="https://smtpjs.com/v3/smtp.js"></script>
+ 
 </body>
 </html>
 
@@ -114,6 +120,22 @@
         navLinks.style.right="-200px";
     }
     
+    function sendEmail(){
+        Email.send({
+            Host : "smtp.gmail.com",
+            Username : "jiunying2000kjy@gmail.com",
+            Password : "20000335Kjy@",
+            To : document.getElementById("email").value,
+            From : "jiunying2000kjy@gmail.com",
+            Subject : "New message",
+            Body : "User Name: "+document.getElementById("name").value
+                +"<br> User Email: "+document.getElementById("email").value
+                +"<br> User Subject: "+document.getElementById("subject").value
+                +"<br> User message: "+document.getElementById("message").value
+        }).then(
+        message => alert(message)
+        );      
+    }
     </script>
 
    
