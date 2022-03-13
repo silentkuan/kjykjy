@@ -69,7 +69,7 @@
         </div>
 
         <div class="contact-col">
-            <form onsubmit="sendEmail(); reset(); return false;" >
+            <form onsubmit="sendEmail(); " >
                 <input id="name" name="name" type="text" placeholder="Enter your name" required>
                 <input id="email" name="email" type="email" placeholder="Enter email address" required>
                 <input id="subject" name="subject" type="text" placeholder="Enter your subject" required>
@@ -110,7 +110,7 @@
 
 
 <!-- js -->
-<script src="https://smtpjs.com/v3/smtp.js"></script>
+
 <script>
     var navLinks=document.getElementById("nav-links");
     function showMenu(){
@@ -121,22 +121,7 @@
         navLinks.style.right="-200px";
     }
     
-    function sendEmail(){
-        Email.send({
-            Host : "smtp.gmail.com",
-            Username : "jiunying2000kjy@gmail.com",
-            Password : "20000335Kjy@",
-            To : "jiunying2000kjy@gmail.com",
-            From : document.getElementById("email").value,
-            Subject : "New message",
-            Body : "User Name: "+document.getElementById("name").value
-                +"<br> User Email: "+document.getElementById("email").value
-                +"<br> User Subject: "+document.getElementById("subject").value
-                +"<br> User message: "+document.getElementById("message").value
-        }).then(
-        message => alert(message)
-        );      
-    }
+    
     </script>
 
    
